@@ -21,9 +21,11 @@ async function main() {
     //const insertResult = await collection.insertOne(obj);
     //console.log('Inserted documents =>', insertResult);
     //var query = {price:10}
-    //const fineResult = await collection.find(query).toArray()
-    //console.log('Found Document ',fineResult)
-var obj = [ 
+
+    var query = {price: {$gt:10}}
+    const fineResult = await collection.find(query).toArray()
+    console.log('Found Document ',fineResult)
+    var obj = [ 
     { name: "Book", price: 10 },
     { name: "Pencil", price: 5 },
     { name: "Calculator", price: 40 },
